@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <LINK REL=StyleSheet HREF="style.css" TYPE="text/css">
+        <LINK REL=StyleSheet HREF="jquery/css/smoothness/jquery-ui-1.8.16.custom.css" TYPE="text/css">
+
+        <script type="text/javascript" src="jquery/js/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript" src="jquery/js/jquery-ui-1.8.16.custom.min.js"></script>
+        <script type="text/javascript" src="jquery/js/jquery.cross-slide.min.js"></script>
+        <title>Ajax Blog MongoDB</title>
+        <script>
+       
+            //jquery
+         
+            $(document).ready(function(){
+                
+                var text = 'eurithiel';
+                
+             /*   $.ajax({
+					url: "http://127.0.0.1:5984/costam",
+					cache:false 
+					}).done(function(html)){
+						$("div.content").append(html);
+						}); */
+						
+				$.ajax({
+					type: "GET",
+					url: "http://127.0.0.1:5984/costam",
+					dataType: "json"
+					}).done(function(json){
+						$("div.content").append(json);
+						});		
+                
+                
+                
+           
+                   
+        </script>
+    </head>
+    <body>
+
+        <div class="content"></div>
+
+
+    </body>
+</html>
