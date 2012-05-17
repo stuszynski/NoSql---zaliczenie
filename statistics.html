@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <LINK REL=StyleSheet HREF="style.css" TYPE="text/css">
+        <LINK REL=StyleSheet HREF="jquery/css/smoothness/jquery-ui-1.8.16.custom.css" TYPE="text/css">
+
+        <script type="text/javascript" src="jquery/js/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript" src="jquery/js/jquery-ui-1.8.16.custom.min.js"></script>
+        <script type="text/javascript" src="jquery/js/jquery.cross-slide.min.js"></script>
+        <title>Ajax Blog MongoDB</title>
+        <script>
+       
+            //jquery
+         
+            $(document).ready(function(){
+          
+                var couchurl = 'http://api.bf3stats.com/pc/onlinestats/?callback=?';
+                
+                $.getJSON(couchurl, function(data) {
+                    $("div.content").html(data);
+                });
+        
+               
+            });		
+                
+                
+                
+           
+                   
+        </script>
+    </head>
+    <body>
+
+        <div class="content"></div>
+
+
+    </body>
+</html>
