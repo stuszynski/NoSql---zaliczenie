@@ -1,1 +1,1 @@
-mongoimport -d stuszynski -c ufo --stopOnError --type csv --headerline --file ufo.us.csv
+mongoimport -d stuszynski -c ufo --type csv --headerline --file ufo.us.csv

@@ -15,7 +15,7 @@ var db = require("mongojs").connect(databaseUrl, collections);
 var options = {
   host: 'localhost',
   port: 5984,
-  path: '/stuszynski/ufo',
+  path: '/stuszynski',
   method: 'POST',                                  // changed
   headers: { "content-type": "application/json" }  // new stuff
 };
@@ -43,26 +43,21 @@ request
     });
   });
 
-function datacollect(){
-var doc = {"ufo" :[]}
-var i=0;
 
 db.ufo.find({}, function(err, wyniki) {
   if( err || !wyniki) 
-	console.log(err+"No female users found");
-  else wyniki.forEach(function(data) {
+	console.log(err+"Nie ma niczego!");
+  else wyniki.forEach(function(element) {
 	  
-	doc.ufo[i] = data;
-	i++;
+	request.write(JSON.stringify(element));
 	
-	});});
+	});
+      request.end();
+    
+  });
 	
-	console.log(data);
-  
-}	
 
-datacollect();
 //var doc = {dupa:"zupa"};
 //request.write(JSON.stringify(doc));
-//request.end();
+//
 
