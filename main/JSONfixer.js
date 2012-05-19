@@ -13,7 +13,8 @@ var fs = require('fs');
 
 function fixer (){
     
-this.fixed = { "docs":[] };
+this.docs = [];
+
 //wewnętrzna
 
 this.zapisz = function(pliczek){
@@ -32,7 +33,7 @@ var i=0;
 
 dzejson.forEach(function(data){
     data._id = "";
-    this.fixed.docs[i] = data; //FIX TypeError: Cannot read property 'docs' of undefined ??WTF??
+    this.docs[i] = data; //FIX TypeError: Cannot read property 'docs' of undefined ??WTF??
     this.i++;
 });}
 console.log("Chyba policzone");
@@ -40,4 +41,4 @@ console.log("Chyba policzone");
 
 var x = new fixer();
 
-x.fix().zapisz(x.fixed);
+x.fix().zapisz(x.docs);
