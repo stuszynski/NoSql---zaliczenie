@@ -9,6 +9,7 @@ Zestaw skryptów na zaliczenie kursu o nierelacyjnych bazach danych.
 Pliki główne znajdują się w folderze "main" ( w temp znajdują się różne testowe mniej lub bardziej działające skrypty)
 
 Założenie:
+
 1. Skrypt csvimport.sh:
     * importuje plik ufo.us.csv do bazy danych mongo;
 
