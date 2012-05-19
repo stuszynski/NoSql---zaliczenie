@@ -9,36 +9,49 @@ var dzejson = require('./export.json');
 var fs = require('fs');
 //globale
 
-
+var end = false;
 
 function fixer (){
     
-this.docs = [];
+this.docs = new Array();
 
-//wewnętrzna
 
-this.zapisz = function(pliczek){
-fs.writeFile("./fixed.json", pliczek, function(err) {
+this.zapisz = function(){
+fs.writeFile("./fixed.json", this.docs, function(err) {
     if(err) {
         console.log(err);
     } else {
         console.log("The file was saved!");
+        
     }
 });}
 
 
-this.fix = function(){
-
-var i=0;
+this.fix = function(res){
+var i = 0;
 
 dzejson.forEach(function(data){
-    data._id = "";
-    this.docs[i] = data; //FIX TypeError: Cannot read property 'docs' of undefined ??WTF??
-    this.i++;
-});}
+    delete data['_id'];
+    delete data[''];
+    //console.log(data);
+    this.docs[i] = data; //FIXED? TypeError: Cannot read property 'docs' of undefined ??WTF??
+    console.log(this.docs[i]);
+    i++;
+   // if(this.i == dzejson.length-1) end=true;
+});
+
+}
 console.log("Chyba policzone");
+
 }
 
 var x = new fixer();
 
-x.fix().zapisz(x.docs);
+x.fix();
+x.zapisz();
+//
+//while(1){
+//if(end == true){
+//x.zapisz();
+//}
+//}
