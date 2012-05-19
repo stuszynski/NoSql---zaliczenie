@@ -1,5 +1,6 @@
-NoSql---zaliczenie
-==================
+    ================
+== NoSql - zaliczenie ==
+    ================
 
 Zestaw skryptów na zaliczenie kursu o nierelacyjnych bazach danych.
 
@@ -18,3 +19,5 @@ Założenie:
     * wykorzystuje node.js do przygotowania jsona do transportu na coucha
     * przy pomocy curla laduje _bulk_docs do coucha
 
+3. Mongo Map Reduce:
+    * skrypt "MongoMapReduce" laduje do powloki mongo skrypt MapReduceMongo.js który ładnie i zgrabnie dokonuje obliczeń zliczając ilość występowania poszczególnych lokacji;
